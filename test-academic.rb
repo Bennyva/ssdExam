@@ -56,9 +56,9 @@ class TestSubject < MiniTest::Test
 
    def test_merge_topics
     #normal
-      result = @subject.mergeTopics @topic1, @topic2, 'mergedTopic Name'
+      result = @subject.mergeTopics 'topic 1', 'topic 2', 'mergedTopic Name'
       #assert result
-      assert_equal mergedTopic, @subject.findTopic('mergedTopic Name')
+      assert_equal @mergedTopic, @subject.findTopic('mergedTopic Name')
       assert_nil @subject.topic1, @subject.findTopic('topic 1')
       assert_nil @subject.topic2, @subject.findTopic('topic 2')
       #error
