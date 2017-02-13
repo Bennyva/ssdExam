@@ -6,11 +6,12 @@ class TestSubject < MiniTest::Test
     @subject = Subject.new 'Module 1',2,5
     @topic1 = Topic.new(6,"topic 1") ;
     @topic2 = Topic.new(7,"topic 2") ;
-    @topic3 = Topic.new(5,"topic 3") ;;
+    @topic3 = Topic.new(5,"topic 3") ;
+    @mergedTopic = Topic.new(13, "mergedTopic Name") ;
   end
 
   def teardown
-      @subject = @topic1 = @topic2 = @topic3 = nil
+      @subject = @topic1 = @topic2 = @topic3 = @mergedTopic = nil
   end
   
   def test_find_topic
@@ -54,7 +55,18 @@ class TestSubject < MiniTest::Test
    end
 
    def test_merge_topics
-      result = @subject.mergeTopics
+    #normal
+      result = @subject.mergeTopics @topic1, @topic2, 'mergedTopic Name'
+      #assert result
+      assert_equal mergedTopic, @subject.findTopic('mergedTopic Name')
+      assert_nil @subject.topic1, @subject.findTopic('topic 1')
+      assert_nil @subject.topic2, @subject.findTopic('topic 2')
+      #error
+      topic5 = nil
+      result = @subject.mergeTopics @topic1, @topic5, 'failure because nil'
+      assert_nil result
+      
+
    end
 
    def addSomeTopics
