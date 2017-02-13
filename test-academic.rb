@@ -67,6 +67,7 @@ class TestSubject < MiniTest::Test
       assert_nil result
       
 
+
    end
 
    def test_other_method
@@ -78,6 +79,7 @@ class TestSubject < MiniTest::Test
      # case 1
      # Boundry
      # case 1  
+
    end
 
    def addSomeTopics
