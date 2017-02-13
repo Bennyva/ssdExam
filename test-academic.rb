@@ -64,13 +64,16 @@ class TestSubject < MiniTest::Test
       assert_equal result, @subject.findTopic('mergedTopic Name')
       assert_nil @subject.findTopic('topic 1')
       assert_nil @subject.findTopic('topic 2')
+
       #error
       topic5 = nil
       result = @subject.mergeTopics @topic1, @topic5, 'failure because nil'
       assert_nil result
+
     
 
       result = @subject.mergeTopics
+
 
    end
 
