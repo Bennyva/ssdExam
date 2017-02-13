@@ -7,7 +7,7 @@ class TestSubject < MiniTest::Test
     @topic1 = Topic.new(6,"topic 1") ;
     @topic2 = Topic.new(7,"topic 2") ;
     @topic3 = Topic.new(5,"topic 3") ;
-    @mergedTopic = Topic.new(13, "mergedTopic Name") ;
+    @mergedTopic = Topic.new(13, "merged") ;
   end
 
   def teardown
@@ -57,6 +57,7 @@ class TestSubject < MiniTest::Test
    def test_merge_topics
 
     #normal
+
 
     @subject.addTopic @topic1
         @subject.addTopic @topic2
