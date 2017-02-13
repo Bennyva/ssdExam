@@ -7,7 +7,15 @@ class TestSubject < MiniTest::Test
     @topic1 = Topic.new(6,"topic 1") ;
     @topic2 = Topic.new(7,"topic 2") ;
     @topic3 = Topic.new(5,"topic 3") ;
+<<<<<<< HEAD
     @mergedTopic = Topic.new(13, "merged") ;
+=======
+<<<<<<< HEAD
+    @mergedTopic = Topic.new(13, "merged") ;
+=======
+    @mergedTopic = Topic.new(13, "mergedTopic Name") ;
+>>>>>>> 0fbd4be18036bff84232554fcd4fac47b636fd38
+>>>>>>> bcab6f74a485262f02a9353c11a35f9e1ff96c1b
   end
 
   def teardown
@@ -56,6 +64,7 @@ class TestSubject < MiniTest::Test
 
    def test_merge_topics
 
+
     #normal
 
 
@@ -69,15 +78,11 @@ class TestSubject < MiniTest::Test
 
 
 
-
       #error
       topic5 = nil
       result = @subject.mergeTopics @topic1, @topic5, 'failure because nil'
       assert_nil result
 
-    
-
-      result = @subject.mergeTopics
 
 
    end
